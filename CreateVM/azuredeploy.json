@@ -93,7 +93,7 @@
       },
       "vmName": {
         "type": "string",
-        "defaultValue": "scostic-windows-vm",
+        "defaultValue": "scostic-winvm",
         "metadata": {
           "description": "Name of the virtual machine."
         }

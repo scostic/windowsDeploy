@@ -1,0 +1,29 @@
+# Starter pipeline
+- task: AzureMysqlDeployment@1
+  inputs:
+    azureSubscription: 'SpaceCloudGR-scostic'
+    ServerName: 'scostic.mysql.database.azure.com'
+    DatabaseName: 'scosticdb'
+    SqlUsername: 'mysqladmin'
+    SqlPassword: 'mysqladminP@ssw0rd!'
+    TaskNameSelector: 'InlineSqlTask'
+    SqlInline: 'CREATE DATABASE IF NOT EXISTS alm;use alm;'
+    IpDetectionMethod: 'AutoDetect'
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
